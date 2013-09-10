@@ -1,30 +1,24 @@
-const int button = 2;
 const int pot = 0;
-const int base = 8;
-int pin = 0;
-int buttonval = HIGH;
+
+const int red = 9;
+const int green = 10;
+const int blue = 11;
+const int redval = 128; 
+const int greenval = 64;
+const int blueval = 64;
 
 void setup() {
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
-  
-  pinMode(button, INPUT);
-  digitalWrite(button, HIGH);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
 }
 
 void loop() {
-  int val = digitalRead(button);
+  int val = analogRead(pot);
+  float scale = val / 1024.0;
   
-  if(val != buttonval && val == LOW) {
-    pin = (pin + 1) % 4; // pin will go 0, 1, 2, 3, 0, 1, ...
-  }
-  
-  buttonval = val;
-  
-  if(pin > 0) {
-    val = analogRead(pot);
-    analogWrite(base + pin, val / 4);
-  }
+  analogWrite(red, redval * scale);
+  analogWrite(green, greenval * scale);
+  analogWrite(blue, blueval * scale);
 }
 
