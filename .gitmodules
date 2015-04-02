@@ -1,0 +1,3 @@
+[submodule "clocktime"]
+	path = clocktime
+	url = https://github.com/LinuxMercedes/clocktime.git
