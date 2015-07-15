@@ -6,99 +6,114 @@
 <a href="..">Home</a> <a href=".">Writing</a>
 
 <h2>Technology Isn't Amoral</h2>
+<!--
+	List of concerns:
+	- Lots of hedge words
+	- Are 'fitness trackers' worth mentioning? Maybe they are wrt that one rape case
+	- Are 'design decisions' equivalent to 'moral judgements'?
+	- AGPL is related to SaaS, maybe include?
+	- How did you manage to write this whole goddamn article and not mention crypto once?
+-->
 <p>
-It is common to see the opinion that "Technology is amoral" in technical discussions. 
-At first glance, this argument seems sound: technology is basically just hammers made out of magnets, and hammers have both good and bad uses.
+People frequently express the opinion that "technology doesn't have morals" or "technology is amoral" in technical discussions.
+At first glance, this argument seems sound: technology is basically just hammers made out of magnets, and hammers have both good and bad uses&mdash;they are amoral.
 Therefore, technology must also not express a moral viewpoint; it is just a tool for its users to express their morals with. 
-However, this argument goes wrong by greatly simplifying the situation. 
-Technology is not necessarily amoral.
-Many pieces of tech include at least part of the morals of their creators.
-This will become more prevalent as we build more complex pieces of tech.
+However, this argument greatly simplifies the situation: technology is not necessarily amoral.
+Many pieces of tech include at least part of the morals of their creators, and these morals will appear more and more frequently as we build more complex pieces of ech.
 </p>
 
 <p>
 Technology is built to serve a purpose; we don't build things without some sort of reason. 
-Therefore, the technology we have doesn't represent a random sampling from all possibly buildable things. 
+Therefore, the technology we have doesn't represent a random sampling from all possible buildable things&mdash;people choose to build things. 
 This process of choosing what technology to build is how morality sneaks into our tech. 
-Design decisions define the direction we take when developing technology; these decisions are ultimately based on our intuition, rather than purely technical merits. 
+Design decisions define the direction we take when developing technology; some of these decisions are ultimately based on our intuition instead of the technical merits of the choices.
 It's usually not obivous that these decisions are incorporating the authors' morals into their projects; as a result, few projects, if any, contain a complete or consistent morality. 
 Anyone who has built complex systems know that the components interact in ways they would never have expected; this same complexity is responsible for self-contradictory moral judgements both in people and in their technology.
 </p>
 
 <p>
-The morals embedded in technology are most visible in the tech that end users directly interact with.
-Let's take a look at a few examples that will elucidate how these morals appear in technology.
+What do morals embedded in technology look like, and where do they appear?
+They're most visible in the tech that end users directly interact with.
+Let's look at a few examples:
 </p>
 
 <p>
 IRC believes that peoples' interaction with it should be mostly controllable by those people themselves. 
 As a result, users have their choice of client, with many client-side features including ignore lists and logging. 
-Messages are (mostly) realtime and ephemeral-there is no replay, and therefore the server isn't required to do much more than forward messages to connected clients. <!-- How does this make the point I want to? -->
+Messages are mostly realtime and ephemeral-there is no replay, and therefore the server isn't required to do much more than forward messages to connected clients. 
+Users don't have to worry about the server relaying messages to people who aren't there in the room the message was said in for the most part. 
+The end result of a client-agnostic server with straightforward message relay policies is that users have a lot of autonomy over how they interact with people and who hears what they say.
 </p>
 
 <p>
 Twitter claims that there is value in expressing thoughts that are 140 or fewer characters long to everyone. 
 The effect of this is that most tweets do not contain enough of an idea to be clearly taken out of context. 
-Following people somewhat restores this context, as you have some sort of idea of what that person tweets about. 
+Following people restores some of this context in an implicit fashion, as you have some sort of idea of what that person thinks. 
 However, retweets spread those tweets to people who don't follow the author, and hashtags remove tweets from their original context and place them into a new one (the feed for that hashtag). 
+The end result is that it is difficult or impossible to clearly communicate complex ideas to a wide audience or to discuss a disagreement because these situations rely on explicitly stated context. 
 </p>
 
 <p>
 A third example: Whois believes that it is moral for domain owners to sacrifice their privacy for the freedom that having a domain brings (or, in certain cases, pay extra to maintain that privacy). 
-You may argue that this is just a side effect of the age of when it was originally designed, but that is exactly the sort of subtle inclusion of morals we're looking at here. 
-The designers worked under an assumption that their users would be primarily good or neutral. <!-- ...indicating something about their morality? -->
+The designers worked under an assumption that people who used whois data would be good or neutral and wouldn't abuse that information.
+Therefore, privacy and anonymity were not, and <a href="https://www.icann.org/news/blog/on-whois-privacy-proxy-services">still are not</a>, necessary for the service.
+You may argue that this is just a side effect of the age of when it was originally designed, but that is exactly what we are talking about&mdash;the designers made decisions based on their moral view of how other people would act.
 </p>
 
 <p>
-Finally, for a more hardware-centric example, consider wearable devices such as Google Glass, the FitBit, or <a href="https://www.fastcodesign.com/3047721/are-your-wearables-invading-someones-privacy">wearable cameras</a>.
+Finally, for a more hardware-centric example, consider devices such as Google Glass, fitness trackers, or <a href="https://www.fastcodesign.com/3047721/are-your-wearables-invading-someones-privacy">wearable cameras</a>.
 All of these encode value in being constantly connected and monitored, usually with your data being stored in some proprietary data silo. 
-In many of these cases, these devices signal not only this morality for the user, but also for people near the user who happen to be visible to the device. 
+In many of these cases, these devices signal a moral choice the user has made not only about themselves but also about people near the user who happen to be visible to the device. 
+Notice how easily the value judgements of the creators of these pieces of technology are applied to a group of people that expands far beyond the users of that product. 
+</p>
+
+<p>
+From these examples we can see a trend of more complex technology encoding more visible moral judgements.
+It's hard to imagine something technically simple like <code>cat</code> containing much of a morality. 
+This is at least partly due to larger projects requiring more value judgements&mdash;a larger 'morality surface', if you will.
+It is also caused by unforseen interactions between smaller morals encoded in separately-built pieces of the technology. <!-- this is rather unsubstantiated -->
 </p>
 
 <p>
 Why is it that it is particularly easy to point out morals encoded in user-facing technology?
-I suspect it is due to the design decisions for those projects focusing primarily on people, instead of what the consuming layer of technology will want. 
-These design decisions must involve choosing what is important to and good for people and good overall.
-
-Something of a feedback loop is set up: developers make an initial design, perform user testing, gather feedback in the form of user stories, use case diagrams, and so forth, and go back to revise their design. <!-- What is the result of this? Patches to software morality? Introduced inconsistencies? -->
-</p>
-
-<p>
-From these examples we can also see something of a trend for more complex technology to encode more visible moral judgements.
-It's hard to imagine something technically simple like <code>cat</code> containing much of a worldview. 
-I suspect this is due to larger projects requiring more value judgements&emdash;a larger 'morality surface', if you will.
+One possible reason is that the design decisions for those projects focus primarily on people, instead of what a consuming layer of technology will want. 
+These design decisions must involve choosing what is important to, and good for, people, as well as what is good overall.
+Something of a feedback loop is set up: developers make an initial design, perform user testing, gather feedback in the form of user stories, use case diagrams, and so forth, and go back to revise their design. 
+This feedback loop amplifies the moral judgements of both the creators and the users who give feedback.
+It can also introduce moral inconsistencies when a particular design decision is reversed without considering the moral implications of that reversal.
+(Consider Twitter's <a href="https://twittercommunity.com/t/removing-the-140-character-limit-from-direct-messages/41348">decision to remove the 140 character limit on direct messages</a>.)
 </p>
 
 <p>
 Now, you may be concerned that we're conflating how people use technology with the technology itself.
 However, it is impossible to truly separate these two concerns.
-For example, plenty of people have worked around Twitter's 140 character limit by posting multipart tweets.
+Plenty of people have worked around Twitter's 140 character limit, for instance, by posting multipart tweets.
 While that technically does give a means for expressing longer thoughts, Twitter's interface discourages this use; therefore, it still makes sense to discuss this moral choice in terms of Twitter's technology.
-As well, a large amount of technology is moving to a software-as-a-service model, making it difficult to distinguish between the morals embedded in the techonlogy itself and the morals of the people running the service.
-For instance, being able to block or ban abusers from a social network is both a technical problem and a people problem: software must allow for banning, and the people running the service must moderate and uphold these bans. 
+As well, a large amount of technology is moving to a software-as-a-service model, making it meaningless to distinguish between the morals embedded in the technology itself and the morals of the people running the service.
+For example, being able to block or ban abusers from a social network is both a technical problem and a people problem: software must allow for banning, and the people running the service must moderate and uphold these bans. 
 
 <p>
 So, what conclusions can we draw from this?
-First off, it's reasonable to find contradictory moral judgements in tech projects.
+First, it's reasonable to find contradictory moral judgements in tech projects.
 These get introduced both by developers not realizing that they're sneaking pieces of their worldview into their projects and by users requesting new features without understanding the existing 'moral architecture' of the software. 
-Second, malicious actors can use the morals embedded in a piece of technology to manipulate or abuse it, just as people can take advantage of the naievity or kind-heartedness of others.
+Second, malicious actors can use the morals embedded in a piece of technology to manipulate or abuse it, just as people can take advantage of the naivety or kind-heartedness of others.
 We should distinguish between a technology being morally acceptable in spite of some people choosing to abuse it and a technology being morally acceptable despite being initially designed for malicious use.
-<!--We should also criticize technology for having good intentions but failing to deliver on them. -->
+Furthermore, it is likely that technology isn't 'morally Turing-complete'; there are moral judgements that humans can make but do not know how to encode into tech.
+Understanding what morality we can and cannot expect our technology to hold for us is a prerequisite for making good design decisions.
+<!--We should also criticize technology for having good intentions but failing to deliver on them.-->
 Finally, as computational intelligence becomes more complex, it will encode more and more of the morals of its creators.
 Let's make those moral decisions explicit and try to understand their side effects, rather than hoping our creations will reflect only the parts of us that we want them to. 
 </p>
 
 <!-- Scraps -->
+<!--
 <p>
 For example, strong cryptography encodes the moral judgement that privacy is a human right (recall that every person, whether or not they are a criminal, is a human).
 This right must be protected from anyone who would violate it, including both malicious actors and governments.
 However, building backdoored cryptography encodes a significantly different moral judgement: privacy is a privilege granted by the government to those it deems worthy.
 </p>
 
-<p>
-I don't think technology is 'morally turing-complete'; there are moral judgements that humans can make but cannot encode into tech.
-</p>
-
+-->
 <!--
 Thesis: Technology is not necessarily amoral. 
 
